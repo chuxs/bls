@@ -239,11 +239,7 @@
             </div>
             <div class="stream-content">
               <h3>Drilling Fluids and Chemicals</h3>
-              <p>
-                Premium water-based and oil-based drilling fluids engineered for
-                optimal wellbore stability, along with high-quality oilfield
-                chemicals.
-              </p>
+
               <a href="#" class="stream-link">
                 Learn More
                 <svg
@@ -266,11 +262,7 @@
             </div>
             <div class="stream-content">
               <h3>Mud Engineering</h3>
-              <p>
-                Expert mud engineering services with comprehensive fluid
-                management, testing, and optimization for all drilling
-                operations.
-              </p>
+
               <a href="#" class="stream-link">
                 Learn More
                 <svg
@@ -296,10 +288,6 @@
             </div>
             <div class="stream-content">
               <h3>Production and Drilling</h3>
-              <p>
-                Complete production and drilling services including well
-                planning, execution, and optimization for maximum efficiency.
-              </p>
               <a href="#" class="stream-link">
                 Learn More
                 <svg
@@ -325,11 +313,7 @@
             </div>
             <div class="stream-content">
               <h3>Offshore and Onshore Operations</h3>
-              <p>
-                Comprehensive operational support for both offshore and onshore
-                projects, ensuring seamless execution across all terrains.
-              </p>
-              <a href="#" class="stream-link">
+              <a href="projects.html" class="stream-link">
                 Learn More
                 <svg
                   viewBox="0 0 24 24"
@@ -404,11 +388,11 @@
     <!-- Safety Section -->
     <section class="safety" id="safety">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header scroll-animate slide-from-bottom">
           <h2>Development and Management of Safety is a Priority in BLS</h2>
         </div>
         <div class="safety-layout">
-          <div class="safety-content">
+          <div class="safety-content scroll-animate slide-from-left">
             <p class="safety-intro">
               In keeping with industry standards, BLS has well established
               Health, Safety and Environment (HSE) policies that guide her HSE
@@ -488,7 +472,7 @@
               projects and services since our establishment as a company.
             </p>
           </div>
-          <div class="safety-image">
+          <div class="safety-image scroll-animate slide-from-right">
             <img src="images/safety.jpg" alt="BLS Safety Operations" />
           </div>
         </div>
@@ -555,5 +539,26 @@
     </button>
 
     <script src="script.js"></script>
+    <script>
+      // Scroll animation for safety section
+      const scrollAnimateElements =
+        document.querySelectorAll(".scroll-animate");
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.15,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      scrollAnimateElements.forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>
